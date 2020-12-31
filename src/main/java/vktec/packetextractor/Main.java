@@ -30,7 +30,13 @@ public class Main {
 			} catch (IndexOutOfBoundsException e) {
 				break;
 			}
-			f.format("%s %d\n", p.getClass().getName().replaceFirst("^net\\.minecraft\\.network\\.packet\\.", ""), i);
+			String name = p.getClass().getName()
+				.replaceFirst("^.*\\.", "")
+				.replaceFirst("(C2S|S2C)Packet(\\$|$)", "")
+				.replaceAll("[A-Z]", "_$0")
+				.replaceFirst("^_", "")
+				.toUpperCase();
+			f.format("%s %s %s %d\n", state.name(), side.name(), name, i);
 		}
 	}
 }
