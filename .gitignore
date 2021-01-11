@@ -3,4 +3,6 @@ build/
 out/
 classes/
 logs/
+
+blocks.txt
 packets.txt
