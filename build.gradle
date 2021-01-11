@@ -12,7 +12,7 @@ group = project.maven_group
 
 task run(type: JavaExec) {
        classpath = sourceSets.main.runtimeClasspath
-       main = 'vktec.packetextractor.Main'
+       main = 'vktec.mcdumper.Main'
 }
 
 dependencies {
